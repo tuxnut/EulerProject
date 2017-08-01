@@ -2,10 +2,6 @@
 
 using namespace std;
 
-bool isPrime(long number) {
-	for 
-}
-
 void problem1() {
 	int sum = 0;
 
@@ -38,30 +34,81 @@ void problem2() {
 	cout << sum;
 }
 void problem3() {
-	long primeFactor = (600851475143 + 1) / 2 - 1;
+	int maxPrimeFactor = 2;
+	long number = int_problem3;
 
-	for (size_t i = primeFactor; i > 1; i--) {
-		bool isPrime = true;
-		
-		for (size_t j = 2; j < i; j++) {
-			if (i % j == 0) {
-				isPrime = false;
-				break;
-			}
+	while (maxPrimeFactor * maxPrimeFactor <= number) {
+		if (number % maxPrimeFactor == 0) {
+			cout << maxPrimeFactor << "\t";
+			number /= maxPrimeFactor;
 		}
+		else
+			maxPrimeFactor++;
+	}
 
-		if (isPrime) {
-			primeFactor = i;
-			break;
+	if (number > 1)
+		cout << "- "<<number;
+}
+void problem4() {
+	int a, b;
+	long largestPalindrome = 0;
+
+	for (size_t i = 100; i < 999; i++)
+	{
+		for (size_t j = 100; j < 999; j++)
+		{
+			int current = i * j;
+			if (isPalindrome(current) && current > largestPalindrome) {
+				largestPalindrome = current;
+				a = i;
+				b = j;
+			}
 		}
 	}
 
-	cout << primeFactor;
+	cout << largestPalindrome;
 }
+void problem5() {
+	cout << 2*2*2*2*3*3*5*7*11*13*17*19;
+}
+void problem6() {
+	long sum_of_square = 0, square_of_sum = 0;
+
+	for (size_t i = 1; i <= 100; i++)
+	{
+		square_of_sum += i;
+		sum_of_square += pow(i, 2);
+	}
+
+	square_of_sum = pow(square_of_sum, 2);
+
+	cout << square_of_sum - sum_of_square;
+}
+void problem7() {
+	int counter = 6;
+	long number = 17;
+
+	do
+	{
+		if (isPrime(number))
+			counter++;
+
+		number+=2;	
+	} while(counter < 10001);
+	
+	cout << number - 2;
+}
+
+
 int main()
 {
 	// problem1();
 	// problem2();	
-	problem3();
+	// problem3();
+	// problem4();
+	// problem5();
+	// problem6();
+	problem7();
+
 	return 0;
 }
