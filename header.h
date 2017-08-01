@@ -3,6 +3,7 @@
 #include <climits>
 
 #define int_problem3 600851475143
+#define offset_pb8 48
 
 bool isPrime(long number) {
 	if (number <= 1) {
