@@ -194,6 +194,24 @@ void problem12() {
 	cout << triangle; 
 }
 void problem13() {
+	
+}
+void problem14() {
+	long lea = 0;
+	long thomas;
+	for (size_t i = 500; i < 1000000; i++) {
+		long collatzSequenceLength = 1;
+		long collatz = i;
+		do {
+			collatz = computeCollatz(collatz);
+			collatzSequenceLength++;
+		} while(collatz > 1);
+		if (collatzSequenceLength > lea) {
+			lea = collatzSequenceLength;
+			thomas = i;
+		}
+	}
+	cout << thomas << " avec " << lea << " termes";
 }
 
 
@@ -211,7 +229,8 @@ int main()
 	// problem10();
 	// problem11();
 	// problem12();
-	problem13();
+	// problem13();
+	problem14();
 
 	return 0;
 }

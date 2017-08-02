@@ -54,3 +54,9 @@ vector<long> list_factor(long number) {
 	}
 	return factor;
 }
+
+long computeCollatz(long number) {
+	if (number <= 1)
+		return 1;
+	return (number % 2 == 0) ? (number / 2) : (3 * number + 1);
+}
