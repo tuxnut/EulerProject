@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cmath>
 #include <climits>
+#include <vector>
+
+using namespace std;
 
 #define int_problem3 600851475143
 #define offset_pb8 48
@@ -37,4 +40,17 @@ bool isPalindrome(long number) {
         return true;
     else
         return false;
+}
+
+vector<long> list_factor(long number) {
+	vector<long> factor;
+
+	for (size_t i = 2; i < sqrt(number); i++) {
+		if (number % i == 0) {
+			long couple = number / i;
+			factor.push_back(i);
+			factor.push_back(couple);
+		}
+	}
+	return factor;
 }
