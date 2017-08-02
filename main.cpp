@@ -181,7 +181,19 @@ void problem11() {
 	// cout << max_column; // 17712864
 }
 void problem12() {
-	
+	long triangle_rank = 1;
+	long triangle = 0;
+
+	do
+	{
+		triangle += triangle_rank;
+		cout << triangle_rank << " ";
+		triangle_rank++;
+	} while(list_factor(triangle).size() < 500);
+
+	cout << triangle; 
+}
+void problem13() {
 }
 
 
@@ -198,7 +210,8 @@ int main()
 	// problem9();
 	// problem10();
 	// problem11();
-	problem12();
+	// problem12();
+	problem13();
 
 	return 0;
 }
