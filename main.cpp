@@ -234,6 +234,22 @@ void problem16() {
 	}
 	cout << sum;
 }
+void problem17() {
+	// from 1 to 9
+	int nb_letter_one_to_nine = 3 + 3 + 5 + 4 + 4 + 3 + 5 + 5 + 4;
+	// from 10 to 19
+	int nb_letter_ten_to_nineteen = 3 + 6 + 6 + 8 + 7 + 7 + 7 + 9 + 9 + 8;
+	// from 20 to 99
+	int nb_letter_twenty_to_ninetynine = nb_letter_one_to_nine * 8 + 10 * (6 + 6 + 5 + 5 + 5 + 7 + 6 + 6);
+
+	// from 1 to 99
+	int nb_letter_one_to_ninetynine = nb_letter_one_to_nine + nb_letter_ten_to_nineteen + nb_letter_twenty_to_ninetynine;
+
+	// from 1 to 999 = (from 1 to 99) * 10 + 'unit hundred and' for each + 'unit hundred' * 9
+	int nb_letter_one_to_900_ninetynine = nb_letter_one_to_ninetynine * 10 + 99 * (13 + 13 + 15 + 14 + 14 + 13 + 15 + 15 + 14) + (10 + 10 + 12 + 11 + 11 + 10 + 12 + 12 + 11);
+
+	cout << nb_letter_one_to_900_ninetynine + 11;
+}
 
 
 int main()
@@ -253,7 +269,8 @@ int main()
 	// problem13();
 	// problem14();
 	// problem15();
-	problem16();
+	// problem16();
+	problem17();
 
 
 	return 0;
