@@ -2,6 +2,7 @@
 #include <cmath>
 #include <climits>
 #include <vector>
+#include <stdio.h>
 
 using namespace std;
 
@@ -59,4 +60,8 @@ long computeCollatz(long number) {
 	if (number <= 1)
 		return 1;
 	return (number % 2 == 0) ? (number / 2) : (3 * number + 1);
+}
+
+long fact(long number) {
+	return (number == 1 || number == 0) ? 1 : fact(number - 1) * number;
 }

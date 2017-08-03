@@ -193,8 +193,7 @@ void problem12() {
 
 	cout << triangle; 
 }
-void problem13() {
-	
+void problem13() {	
 }
 void problem14() {
 	long lea = 0;
@@ -213,6 +212,28 @@ void problem14() {
 	}
 	cout << thomas << " avec " << lea << " termes";
 }
+void problem15() {
+	/* Le but est d'aller de (0, 0)  à (20, 20) (n, n)
+	* on doit donc aller 20 (n) fois à droite, et 20 (n) fois en bas
+	* on aura fait dans TOUS les cas 40 (2*n) déplacements
+	* d' où le 20 (n) parmi 40 (2*n) */
+	
+	long unsigned int aurelien = fact(40) / pow(fact(20), 2); 
+	cout << aurelien << 137846528820;//137846528820
+}
+void problem16() {
+	// printf("%lf", pow(2, 1000));
+	const char* lol = "10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376";
+	long sum = 0;
+	int i = 0;
+
+	while (lol[i])
+	{
+		sum += lol[i] - offset_pb8;
+		i++;
+	}
+	cout << sum;
+}
 
 
 int main()
@@ -230,7 +251,10 @@ int main()
 	// problem11();
 	// problem12();
 	// problem13();
-	problem14();
+	// problem14();
+	// problem15();
+	problem16();
+
 
 	return 0;
 }
