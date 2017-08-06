@@ -250,10 +250,65 @@ void problem17() {
 
 	cout << nb_letter_one_to_900_ninetynine + 11;
 }
+void problem18() {
+
+}
+void problem19() {
+	// Le jour de la semaine
+	int days_number_in_week = 2; // 1er janvier 1901 est un mardi;
+
+	int nb_of_days_by_month [12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	int nb_of_days_by_month_leap_year [12] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+	int nb_sunday_first_of_month = 0;
+	
+	int year = 1901;
+
+	do {
+		if (year % 4 != 0) {
+			for (size_t i = 0; i < 12; i++) {
+					if(nb_of_days_by_month[i] == 30) {
+						days_number_in_week = (days_number_in_week + 2) % 7; 
+					} else if(nb_of_days_by_month[i] == 31) {
+						days_number_in_week = (days_number_in_week + 3) % 7;
+					}
+
+					if(days_number_in_week == 0)
+						nb_sunday_first_of_month++;
+			}
+		} else {
+			for (size_t i = 0; i < 12; i++) {
+					if(nb_of_days_by_month_leap_year[i] == 29) {
+						days_number_in_week = (days_number_in_week + 1) % 7;
+					} else if(nb_of_days_by_month_leap_year[i] == 30) {
+						days_number_in_week = (days_number_in_week + 2) % 7; 
+					} else if(nb_of_days_by_month_leap_year[i] == 31) {
+						days_number_in_week = (days_number_in_week + 3) % 7;
+					}
+
+					if(days_number_in_week == 0)
+						nb_sunday_first_of_month++;
+			}
+		}
+
+		year++;
+	} while(year < 2001);
+
+	cout << nb_sunday_first_of_month;
+}
+void problem20() {
+	mpz_class a, b, c;
+
+	a = 1234;
+	b = "-1234";
+
+	c = a + b;
+	cout << c;
+}
 
 
-int main()
-{
+
+int main(int argc, char **argv) {
 	// problem1();
 	// problem2();	
 	// problem3();
@@ -270,8 +325,9 @@ int main()
 	// problem14();
 	// problem15();
 	// problem16();
-	problem17();
-
+	// problem17();
+	// problem19();
+	problem20();
 
 	return 0;
 }
