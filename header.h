@@ -6,6 +6,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <gmpxx.h>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <iterator>
 
 using namespace std;
 
@@ -48,7 +53,7 @@ bool isPalindrome(long number) {
 
 vector<long> list_factor(size_t number) {
 	vector<long> factor;
-
+	factor.push_back(1);
 	for (size_t i = 2; i < sqrt(number); i++) {
 		if (number % i == 0) {
 			size_t couple = number / i;
@@ -70,4 +75,35 @@ double fact(double number) {
 		return 0;
 	else
 		return (number == 1 || number == 0) ? 1 : fact(number - 1) * number;
+}
+
+mpz_class fact_mpz(unsigned int n) {
+    mpz_class result(n); 		// initialize an arbitrary-sized integer with 'n'
+    while(n-- > 1) result *= n; // compute the product with every integers < n
+    return result;
+}
+
+string readFile(const char * filename) {
+	string str;
+	ifstream file (filename);
+
+	if(file.is_open()) {
+		// get length of file:
+		file.seekg(0, file.end);
+		int length = file.tellg();
+		file.seekg(0, file.beg);
+
+		// allocate memory:
+		char * buffer = new char [length];
+
+		// read data as a block:
+		file.read(buffer,length);
+
+		file.close();
+
+		str = buffer;
+		delete[] buffer;
+
+		return str;
+	}
 }
