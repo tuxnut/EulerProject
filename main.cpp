@@ -1,5 +1,5 @@
 #include "./header.h"
-
+/*Multiples of 3 and 5*/
 void problem1() {
 	int sum = 0;
 
@@ -8,8 +8,9 @@ void problem1() {
 			sum += i;
 	}
 
-	cout << sum;
+	std::cout << sum;
 }
+/*Even Fibonacci numbers*/
 void problem2() {
 	int cpt = 0;
 	int sum = 0;
@@ -29,15 +30,16 @@ void problem2() {
 		}
 	} while (fibo_next <= 4000000);
 	sum += 2;
-	cout << sum;
+	std::cout << sum;
 }
+/*Largest prime factor*/
 void problem3() {
 	int maxPrimeFactor = 2;
 	long number = int_problem3;
 
 	while (maxPrimeFactor * maxPrimeFactor <= number) {
 		if (number % maxPrimeFactor == 0) {
-			cout << maxPrimeFactor << "\t";
+			std::cout << maxPrimeFactor << "\t";
 			number /= maxPrimeFactor;
 		}
 		else
@@ -45,8 +47,9 @@ void problem3() {
 	}
 
 	if (number > 1)
-		cout << "- "<<number;
+		std::cout << "- "<<number;
 }
+/*Largest palindrome product*/
 void problem4() {
 	int a, b;
 	long largestPalindrome = 0;
@@ -64,11 +67,13 @@ void problem4() {
 		}
 	}
 
-	cout << largestPalindrome;
+	std::cout << largestPalindrome;
 }
+/*Smallest multiple*/
 void problem5() {
-	cout << 2*2*2*2*3*3*5*7*11*13*17*19;
+	std::cout << 2*2*2*2*3*3*5*7*11*13*17*19;
 }
+/*Sum square difference*/
 void problem6() {
 	long sum_of_square = 0, square_of_sum = 0;
 
@@ -80,8 +85,9 @@ void problem6() {
 
 	square_of_sum = pow(square_of_sum, 2);
 
-	cout << square_of_sum - sum_of_square;
+	std::cout << square_of_sum - sum_of_square;
 }
+/*10001st prime*/
 void problem7() {
 	int counter = 6;
 	long number = 17;
@@ -94,8 +100,9 @@ void problem7() {
 		number+=2;	
 	} while(counter < 10001);
 	
-	cout << number - 2;
+	std::cout << number - 2;
 }
+/*Largest product in a series*/
 void problem8() {
 	const char* num = "7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450";
 	
@@ -116,8 +123,9 @@ void problem8() {
 		max = (curr > max) ? curr : max;
 	}
 	
-	cout << max;
+	std::cout << max;
 }
+/*Special Pythagorean triplet*/
 void problem9() {
 	// 200 - 375 - 425
 	for (size_t i = 1; i < 333; i++)
@@ -127,13 +135,14 @@ void problem9() {
 			for (size_t k = 3; k < 500; k++)
 			{
 				if(pow(i, 2) + pow (j, 2) == pow(k, 2) && ( i + j + k) == 1000) {
-					cout << i*j*k << " " << i << " " << j << " " << k << " ";
+					std::cout << i*j*k << " " << i << " " << j << " " << k << " ";
 					break;
 				}
 			}
 		}
 	}
 }
+/*Summation of primes*/
 void problem10() {
 	long int chloe = 17;
 
@@ -142,8 +151,9 @@ void problem10() {
 		if(isPrime(i))
 			chloe+=i;
 	}
-	cout << chloe;
+	std::cout << chloe;
 }
+/*Largest product in a grid*/
 void problem11() {
 	const char *clemence = " 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65 52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91 22 31 16 71 51 67 63 89 41 92 36 54 22 40 40 28 66 33 13 80 24 47 32 60 99 03 45 02 44 75 33 53 78 36 84 20 35 17 12 50 32 98 81 28 64 23 67 10 26 38 40 67 59 54 70 66 18 38 64 70 67 26 20 68 02 62 12 20 95 63 94 39 63 08 40 91 66 49 94 21 24 55 58 05 66 73 99 26 97 17 78 78 96 83 14 88 34 89 63 72 21 36 23 09 75 00 76 44 20 45 35 14 00 61 33 97 34 31 33 95 78 17 53 28 22 75 31 67 15 94 03 80 04 62 16 14 09 53 56 92 16 39 05 42 96 35 31 47 55 58 88 24 00 17 54 24 36 29 85 57 86 56 00 48 35 71 89 07 05 44 44 37 44 60 21 58 51 54 17 58 19 80 81 68 05 94 47 69 28 73 92 13 86 52 17 77 04 89 55 40 04 52 08 83 97 35 99 16 07 97 57 32 16 26 26 79 33 27 98 66 88 36 68 87 57 62 20 72 03 46 33 67 46 55 12 32 63 93 53 69 04 42 16 73 38 25 39 11 24 94 72 18 08 46 29 32 40 62 76 36 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
@@ -177,9 +187,10 @@ void problem11() {
 		max_column = (curr > max_column) ? curr : max_column;
 	} */ 
 
-	// cout << max_line; // 21426363
-	// cout << max_column; // 17712864
+	// std::cout << max_line; // 21426363
+	// std::cout << max_column; // 17712864
 }
+/*Highly divisible triangular number*/
 void problem12() {
 	long triangle_rank = 1;
 	long triangle = 0;
@@ -187,12 +198,13 @@ void problem12() {
 	do
 	{
 		triangle += triangle_rank;
-		cout << triangle_rank << " ";
+		std::cout << triangle_rank << " ";
 		triangle_rank++;
 	} while(list_factor(triangle).size() < 500);
 
-	cout << triangle; 
+	std::cout << triangle; 
 }
+/*Large sum*/
 void problem13() {
 	// const char * n = "37107287533902102798797998220837590246510135740250";
 	// mpz_class result(n);
@@ -296,8 +308,9 @@ void problem13() {
 	// n  = "20849603980134001723930671666823555245252804609722";result += mpz_class (n);
 	// n  = "53503534226472524250874054075591789781264330331690";result += mpz_class (n);
 
-	// cout << result; //5537376230390876637302048746832985971773659831892672;
+	// std::cout << result; //5537376230390876637302048746832985971773659831892672;
 }
+/*Longest Collatz sequence*/
 void problem14() {
 	long lea = 0;
 	long thomas;
@@ -313,8 +326,9 @@ void problem14() {
 			thomas = i;
 		}
 	}
-	cout << thomas << " avec " << lea << " termes";
+	std::cout << thomas << " avec " << lea << " termes";
 }
+/*Lattice paths*/
 void problem15() {
 	/* Le but est d'aller de (0, 0)  à (20, 20) (n, n)
 	* on doit donc aller 20 (n) fois à droite, et 20 (n) fois en bas
@@ -322,8 +336,9 @@ void problem15() {
 	* d' où le 20 (n) parmi 40 (2*n) */
 	
 	long unsigned int aurelien = fact(40) / pow(fact(20), 2); 
-	cout << aurelien << 137846528820;//137846528820
+	std::cout << aurelien << 137846528820;//137846528820
 }
+/*Power digit sum*/
 void problem16() {
 	// printf("%lf", pow(2, 1000));
 	const char* lol = "10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376";
@@ -335,8 +350,9 @@ void problem16() {
 		sum += lol[i] - offset_pb8;
 		i++;
 	}
-	cout << sum;
+	std::cout << sum;
 }
+/*Number letter counts*/
 void problem17() {
 	// from 1 to 9
 	int nb_letter_one_to_nine = 3 + 3 + 5 + 4 + 4 + 3 + 5 + 5 + 4;
@@ -351,11 +367,13 @@ void problem17() {
 	// from 1 to 999 = (from 1 to 99) * 10 + 'unit hundred and' for each + 'unit hundred' * 9
 	int nb_letter_one_to_900_ninetynine = nb_letter_one_to_ninetynine * 10 + 99 * (13 + 13 + 15 + 14 + 14 + 13 + 15 + 15 + 14) + (10 + 10 + 12 + 11 + 11 + 10 + 12 + 12 + 11);
 
-	cout << nb_letter_one_to_900_ninetynine + 11;
+	std::cout << nb_letter_one_to_900_ninetynine + 11;
 }
+/*Maximum path sum I*/
 void problem18() {
 
 }
+/*Counting Sundays*/
 void problem19() {
 	// Le jour de la semaine
 	int days_number_in_week = 2; // 1er janvier 1901 est un mardi;
@@ -370,35 +388,36 @@ void problem19() {
 	do {
 		if (year % 4 != 0) {
 			for (size_t i = 0; i < 12; i++) {
-					if(nb_of_days_by_month[i] == 30) {
-						days_number_in_week = (days_number_in_week + 2) % 7; 
-					} else if(nb_of_days_by_month[i] == 31) {
-						days_number_in_week = (days_number_in_week + 3) % 7;
-					}
+				if(nb_of_days_by_month[i] == 30) {
+					days_number_in_week = (days_number_in_week + 2) % 7; 
+				} else if(nb_of_days_by_month[i] == 31) {
+					days_number_in_week = (days_number_in_week + 3) % 7;
+				}
 
-					if(days_number_in_week == 0)
-						nb_sunday_first_of_month++;
+				if(days_number_in_week == 0)
+					nb_sunday_first_of_month++;
 			}
 		} else {
 			for (size_t i = 0; i < 12; i++) {
-					if(nb_of_days_by_month_leap_year[i] == 29) {
-						days_number_in_week = (days_number_in_week + 1) % 7;
-					} else if(nb_of_days_by_month_leap_year[i] == 30) {
-						days_number_in_week = (days_number_in_week + 2) % 7; 
-					} else if(nb_of_days_by_month_leap_year[i] == 31) {
-						days_number_in_week = (days_number_in_week + 3) % 7;
-					}
+				if(nb_of_days_by_month_leap_year[i] == 29) {
+					days_number_in_week = (days_number_in_week + 1) % 7;
+				} else if(nb_of_days_by_month_leap_year[i] == 30) {
+					days_number_in_week = (days_number_in_week + 2) % 7; 
+				} else if(nb_of_days_by_month_leap_year[i] == 31) {
+					days_number_in_week = (days_number_in_week + 3) % 7;
+				}
 
-					if(days_number_in_week == 0)
-						nb_sunday_first_of_month++;
+				if(days_number_in_week == 0)
+					nb_sunday_first_of_month++;
 			}
 		}
 
 		year++;
 	} while(year < 2001);
 
-	cout << nb_sunday_first_of_month;
+	std::cout << nb_sunday_first_of_month;
 }
+/*Factorial digit sum*/
 void problem20() {
 	// mpz_class n = fact_mpz(100); // 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
 	const char* fact_100 = "93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000";
@@ -411,15 +430,16 @@ void problem20() {
 		i++;
 	}	
 
-	cout << sum;
+	std::cout << sum;
 }
+/*Amicable numbers*/
 void problem21() {
 
 	int sum = 0;
 	for (size_t i = 1; i < 10000; i++)
 	{
 		// compute d(i)
-		vector<long> divisor_i = list_factor(i);
+		std::vector<long> divisor_i = list_factor(i);
 
 		int sum_divisor_i = 0;
 
@@ -429,7 +449,7 @@ void problem21() {
 		}
 
 		// compute d(sum_divisor_i)
-		vector<long> divisor_ii = list_factor(sum_divisor_i);
+		std::vector<long> divisor_ii = list_factor(sum_divisor_i);
 
 		int sum_divisor_ii = 0;
 
@@ -439,20 +459,95 @@ void problem21() {
 		}
 
 		if(sum_divisor_ii == i && i != sum_divisor_i) {
-			cout << i << " and " << sum_divisor_i << endl;
+			std::cout << i << " and " << sum_divisor_i << std::endl;
 			sum += i;
 		}
 	}
 
 	std::cout << sum << '\n';
 }
+/*Names scores*/
 void problem22() {
-	string str = readFile("p022_names.txt");
-	istringstream iss(str);
-	vector<string> tokens;
-	copy(istream_iterator<string>(iss), istream_iterator<string>(), back_inserter(tokens));
+	/* setup data */
+	std::string str = readFile("p022_names.txt");
+	std::string delimiter = "\",\"";
 
-	cout << tokens.size() <<endl;
+	size_t pos = 0;
+	std::vector<std::string> names;
+
+	while ((pos = str.find(delimiter)) != std::string::npos) {
+		names.push_back(str.substr(0, pos));
+		str.erase(0, pos + delimiter.length());
+	}
+
+	names[0].erase(0, 1);
+	names.push_back("ALONSO");
+
+	/* sorting vector */
+	sort(names.begin(), names.end());
+
+	/* computing sum */
+	size_t sum = 0;
+
+	for (size_t i = 0; i < names.size(); i++) {
+		std::string name_at_i = names[i];
+		int value_name = 0, cpt = 0;
+
+		while(name_at_i[cpt]) {
+			int letter = name_at_i[cpt] - offset_pb22;
+			value_name += letter;
+			cpt++;
+		}
+		value_name *= i+1;
+		sum += value_name;
+	}
+
+	std::cout << sum << '\n';
+}
+/*Non-abundant sums*/
+void problem23() {
+	// find every abundant number < 28123
+	// find every combination of two of those
+	// sum what's left
+	/* size_t guillaume = 0;
+
+	std::vector<int> vect_abundant_nb;
+	for (size_t i = 12; i < 28124 - 12; i++)
+		if(isAbundant(i))
+			vect_abundant_nb.push_back(i);
+
+	std::vector<int> vect_sum_2_abundant;
+	for (size_t i = 0; i < 3; i++) {
+		for (size_t j = i; j < vect_abundant_nb.size(); j++) {
+			int sum_2_abundant = vect_abundant_nb[i] + vect_abundant_nb[j];
+			
+			if(sum_2_abundant > 28123)
+				break;
+			else if(find(vect_sum_2_abundant.begin(), vect_sum_2_abundant.end(), sum_2_abundant) != vect_sum_2_abundant.end())
+				continue;
+			else {
+				vect_sum_2_abundant.push_back(sum_2_abundant);
+				std::cout << sum_2_abundant << endl;
+			}
+		}
+		std::cout << "-----------" << i << '\n';
+	}
+
+	sort(vect_sum_2_abundant.begin(), vect_sum_2_abundant.end());
+
+	for (size_t i = 0; i < vect_sum_2_abundant.size(); i++) {
+		if(!(find(vect_sum_2_abundant.begin(), vect_sum_2_abundant.end(), i) != vect_sum_2_abundant.end()))
+			guillaume += i;
+	}
+
+	std::cout << guillaume << '\n'; */
+}
+/*Lexicographic permutations*/
+void problem24() {
+	// find at least 1 000 000 lexicographic permutation
+	// sort
+	// answer
+
 }
 
 
@@ -478,7 +573,9 @@ int main(int argc, char **argv) {
 	// problem19();
 	// problem20();
 	// problem21();
-	problem22();
+	// problem22();
+	// problem23();
+	problem24();
 
 	return 0;
 }

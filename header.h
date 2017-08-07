@@ -12,10 +12,10 @@
 #include <algorithm>
 #include <iterator>
 
-using namespace std;
 
 #define int_problem3 600851475143
 #define offset_pb8 48
+#define offset_pb22 64
 
 bool isPrime(long number) {
 	if (number <= 1) {
@@ -51,8 +51,8 @@ bool isPalindrome(long number) {
         return false;
 }
 
-vector<long> list_factor(size_t number) {
-	vector<long> factor;
+std::vector<long> list_factor(size_t number) {
+	std::vector<long> factor;
 	factor.push_back(1);
 	for (size_t i = 2; i < sqrt(number); i++) {
 		if (number % i == 0) {
@@ -83,9 +83,9 @@ mpz_class fact_mpz(unsigned int n) {
     return result;
 }
 
-string readFile(const char * filename) {
-	string str;
-	ifstream file (filename);
+std::string readFile(const char * filename) {
+	std::string str;
+	std::ifstream file (filename);
 
 	if(file.is_open()) {
 		// get length of file:
@@ -106,4 +106,37 @@ string readFile(const char * filename) {
 
 		return str;
 	}
+}
+
+bool isPerfect(long number) {
+	std::vector<long> divisor = list_factor(number);
+
+	size_t sum = 0;
+
+	for (size_t i = 0; i < divisor.size(); i++)
+		sum += divisor[i];
+
+	return (number == sum) ? true : false;
+}
+
+bool isAbundant(long number) {
+	std::vector<long> divisor = list_factor(number);
+
+	size_t sum = 0;
+
+	for (size_t i = 0; i < divisor.size(); i++)
+		sum += divisor[i];
+
+	return (number > sum) ? true : false;
+}
+
+bool isDeficient(long number) {
+	std::vector<long> divisor = list_factor(number);
+
+	size_t sum = 0;
+
+	for (size_t i = 0; i < divisor.size(); i++)
+		sum += divisor[i];
+
+	return (number < sum) ? true : false;
 }
