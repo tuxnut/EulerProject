@@ -547,7 +547,6 @@ void problem24() {
 	// find at least 1 000 000 lexicographic permutation
 	// sort
 	// answer
-
 }
 
 
@@ -576,6 +575,5 @@ int main(int argc, char **argv) {
 	// problem22();
 	// problem23();
 	problem24();
-
 	return 0;
 }
