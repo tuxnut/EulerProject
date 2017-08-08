@@ -544,9 +544,23 @@ void problem23() {
 }
 /*Lexicographic permutations*/
 void problem24() {
-	// find at least 1 000 000 lexicographic permutation
-	// sort
-	// answer
+	int tab[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+	std::sort(tab, tab+10);
+	size_t cpt = 1;
+
+	do {
+		std::next_permutation(tab, tab+10);
+		cpt++;
+	} while(cpt<1000000);
+	
+	for(size_t i = 0; i < 10; i++)
+		std::cout << tab[i];
+}
+/*1000-digit Fibonacci number*/
+void problem25() {
+
+	// std::cout << limit << std::endl;
 }
 
 
@@ -574,6 +588,7 @@ int main(int argc, char **argv) {
 	// problem21();
 	// problem22();
 	// problem23();
-	problem24();
+	// problem24();
+	problem25();
 	return 0;
 }

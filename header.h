@@ -64,6 +64,31 @@ std::vector<long> list_factor(size_t number) {
 	return factor;
 }
 
+size_t computeFibo(size_t rank) {
+	if((rank == 0) || (rank == 1))
+		return rank;
+	else
+		return (computeFibo(rank-1) + computeFibo(rank-2));
+}
+
+mpz_class computeFiboUntil(mpz_class limit) {
+	mpz_class jean(1);
+	mpz_class jacques(1);
+	mpz_class jean_jacques(2);
+	size_t rank = 2;
+
+	while(limit > jean_jacques) {
+		jacques = jean;
+		jean = jean_jacques;
+		jean_jacques = jean + jacques;
+		rank++;
+	}
+
+	std::cout << "Fino stop at rank " << rank << std::endl;
+
+	return jean_jacques;
+}
+
 size_t computeCollatz(size_t number) {
 	if (number <= 1)
 		return 1;
