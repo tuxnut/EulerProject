@@ -75,7 +75,7 @@ mpz_class computeFiboUntil(mpz_class limit) {
 	mpz_class jean(1);
 	mpz_class jacques(1);
 	mpz_class jean_jacques(2);
-	size_t rank = 2;
+	size_t rank = 3;
 
 	while(limit > jean_jacques) {
 		jacques = jean;
@@ -84,7 +84,7 @@ mpz_class computeFiboUntil(mpz_class limit) {
 		rank++;
 	}
 
-	std::cout << "Fino stop at rank " << rank << std::endl;
+	std::cout << "Fibo stop at rank " << rank << std::endl;
 
 	return jean_jacques;
 }

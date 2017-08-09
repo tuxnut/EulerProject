@@ -559,8 +559,12 @@ void problem24() {
 }
 /*1000-digit Fibonacci number*/
 void problem25() {
-
-	// std::cout << limit << std::endl;
+	// with test : Fibonacci sequence will reach E^(x) at the rank 5 * x and a correction of -20 every 100
+	std::cout << computeFiboUntil(mpz_class(1e308)) << std::endl;
+}
+/*Reciprocal cycles*/
+void problem26() {
+	
 }
 
 
