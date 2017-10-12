@@ -587,6 +587,41 @@ void problem25() {
 	std::cout << moy << std::endl;
 }
 
+/*Reciprocal cycles*/
+void problem26() {
+	int d = 0;
+	int recurringCycleLength = 0;
+	
+	
+	for(size_t i = 2; i < 10; i++) {
+		std::vector<int> digit; // stocker les digit;
+		// double_t result = 1./i;
+		digit.push_back(1);
+
+		int n = 0;
+		while(1) {
+			int value = (10 * digit.at(n)) % i;
+			
+			if(value == 0 || (std::find(digit.begin(), digit.end(), value) != digit.end()))
+				break;
+			
+			digit.push_back(value);
+
+			n++;
+		}
+
+		if(n - 1 > recurringCycleLength) {
+			recurringCycleLength = n - 1;
+			d = i;
+		}
+
+		std::cout << "nouveau max : " << d << std::endl;
+	}
+
+	std::cout << "Valeur de d est " << d << std::endl;
+	std::cout << "Longueur du cycle est " << recurringCycleLength << std::endl;
+}
+
 
 
 int main(int argc, char **argv) {
@@ -613,6 +648,7 @@ int main(int argc, char **argv) {
 	// problem22();
 	// problem23();
 	// problem24();
-	problem25();
+	// problem25();
+	problem26();
 	return 0;
 }
