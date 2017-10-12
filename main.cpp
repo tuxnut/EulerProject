@@ -564,18 +564,6 @@ void problem25() {
 }
 /*Reciprocal cycles*/
 void problem26() {
-	// double_t n = 2;
-	double_t d;
-
-	for(size_t i = 2; i < 1001; i++) {
-		
-
-		while() {
-			
-		}
-	}
-
-	std::vector<size_t> recurring_cycle;
 	
 }
 
