@@ -586,7 +586,6 @@ void problem25() {
 	moy /= (indexes.size()-1);
 	std::cout << moy << std::endl;
 }
-
 /*Reciprocal cycles*/
 void problem26() {
 	int d = 0;
@@ -620,7 +619,6 @@ void problem26() {
 	std::cout << "Valeur de d est " << d << std::endl;
 	std::cout << "Longueur du cycle est " << recurringCycleLength << std::endl;
 }
-
 /*Quadratic primes*/
 void problem27() {
 	long max_a = -1000;
@@ -647,7 +645,11 @@ void problem27() {
 
 	std::cout << "a = " << max_a << "\tb = " << max_b << "\tmax_prime_cnt" << max_prime_cnt << "\t a * b = " << max_a * max_b << std::endl;
 }
-
+/*Number spiral diagonals*/
+void problem28() {
+	size_t sum = 0;
+	
+}
 
 
 int main(int argc, char **argv) {
