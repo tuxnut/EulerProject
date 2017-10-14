@@ -593,7 +593,7 @@ void problem26() {
 	int recurringCycleLength = 0;
 	
 	
-	for(size_t i = 2; i < 10; i++) {
+	for(size_t i = 2; i < 1000; i++) {
 		std::vector<int> digit; // stocker les digit;
 		// double_t result = 1./i;
 		digit.push_back(1);
@@ -617,7 +617,6 @@ void problem26() {
 
 		std::cout << "nouveau max : " << d << std::endl;
 	}
-
 	std::cout << "Valeur de d est " << d << std::endl;
 	std::cout << "Longueur du cycle est " << recurringCycleLength << std::endl;
 }
