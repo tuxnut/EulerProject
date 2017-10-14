@@ -621,6 +621,33 @@ void problem26() {
 	std::cout << "Longueur du cycle est " << recurringCycleLength << std::endl;
 }
 
+/*Quadratic primes*/
+void problem27() {
+	long max_a = -1000;
+	long max_b = -1001;
+	long max_prime_cnt = 0;
+
+	for(long a = -999; a < 1000; a++) {
+		for(long b = -1000; b < 1001; b++) {
+			int prime_cnt = 0;
+			int n = 0; 
+			
+			while(isPrime(pow(n, 2) + a * n + b)) {
+				prime_cnt++;
+				n++;
+			}
+
+			if(prime_cnt > max_prime_cnt) {
+				max_a = a;
+				max_b = b;
+				max_prime_cnt = prime_cnt;
+			}
+		}
+	}
+
+	std::cout << "a = " << max_a << "\tb = " << max_b << "\tmax_prime_cnt" << max_prime_cnt << "\t a * b = " << max_a * max_b << std::endl;
+}
+
 
 
 int main(int argc, char **argv) {
@@ -648,6 +675,7 @@ int main(int argc, char **argv) {
 	// problem23();
 	// problem24();
 	// problem25();
-	problem26();
+	// problem26();
+	problem27();
 	return 0;
 }
