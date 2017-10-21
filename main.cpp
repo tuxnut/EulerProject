@@ -647,8 +647,25 @@ void problem27() {
 }
 /*Number spiral diagonals*/
 void problem28() {
-	size_t sum = 0;
-	
+	size_t sum = 1;
+	size_t differential = 2;
+	size_t currentCorner = 3;
+	int corner = 1;
+
+	while(currentCorner < pow(1001, 2) + 1) {
+		
+		sum += currentCorner;
+		currentCorner += differential;
+		corner++;
+		
+		if(corner % 4 == 0) {
+			corner == 0;
+			differential += 2; 
+		}
+	}
+
+	std::cout << sum << std::endl;
+
 }
 
 
@@ -678,6 +695,7 @@ int main(int argc, char **argv) {
 	// problem24();
 	// problem25();
 	// problem26();
-	problem27();
+	// problem27();
+	problem28();
 	return 0;
 }
