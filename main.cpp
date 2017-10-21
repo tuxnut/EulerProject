@@ -665,7 +665,10 @@ void problem28() {
 	}
 
 	std::cout << sum << std::endl;
-
+}
+/* Distinct powers */
+void problem29() {
+	
 }
 
 
@@ -696,6 +699,7 @@ int main(int argc, char **argv) {
 	// problem25();
 	// problem26();
 	// problem27();
-	problem28();
+	// problem28();
+	problem29();
 	return 0;
 }
