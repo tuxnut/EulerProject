@@ -165,3 +165,10 @@ bool isDeficient(long number) {
 
 	return (number < sum) ? true : false;
 }
+
+void displayVetor(std::vector<size_t> vecteur) {
+	for(size_t i = 0; i < vecteur.size(); i++) {
+		std::cout << vecteur.at(i) << "\t";
+	}
+	std::cout << std::endl;
+}

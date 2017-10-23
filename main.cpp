@@ -668,6 +668,28 @@ void problem28() {
 }
 /* Distinct powers */
 void problem29() {
+	std::vector<mpz_class> lisa;
+	int limit = 100;
+
+	mpz_t monique, alison;
+	mpz_init(monique);
+	mpz_init(alison);
+	
+	for(size_t a = 2; a <= limit; a++) {
+		for(size_t b = 2; b <= limit; b++) {
+			mpz_set_ui(monique, a);
+			mpz_pow_ui(alison, monique, b);
+			mpz_class ariana(alison);
+
+			if(std::find(lisa.begin(), lisa.end(), ariana) == lisa.end()) {
+				lisa.push_back(ariana);
+			}
+		}
+	}
+	std::cout << lisa.size() << std::endl;
+}
+/* Digit fifth powers */
+void problem30() {
 	
 }
 
@@ -700,6 +722,7 @@ int main(int argc, char **argv) {
 	// problem26();
 	// problem27();
 	// problem28();
-	problem29();
+	// problem29();
+	problem30();
 	return 0;
 }
