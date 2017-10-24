@@ -690,7 +690,38 @@ void problem29() {
 }
 /* Digit fifth powers */
 void problem30() {
+	std::vector<size_t> number;
+	std::vector<size_t> fifthPower;
+	size_t sum_number = 0;
+	// size_t limit = LONG_MAX;
+
+	for(size_t i = 0; i < 10; i++) {
+		fifthPower.push_back(std::pow(i, 5));
+	}
+
+	for(size_t i = 2; i < LONG_MAX; i++) {
+		size_t num = i;
+		int thousand = (num / 1000) ? num / 1000 : 0;
+		num -= thousand * 1000;
+		int hundreds = (num / 100) ? num / 100 : 0;
+		num -= hundreds * 100;
+		int dozens = (num / 10) ? num / 10 : 0;
+		num -= dozens * 10;
+		int units = num;
+
+		size_t sum = fifthPower[thousand] + fifthPower[hundreds] + fifthPower[dozens] + fifthPower[units];
+
+		if(sum == i) {
+			number.push_back(i);
+			std::cout << "truv" << std::endl;
+		}
+	}
 	
+	// for(size_t i = 0; i < number.size(); i++) {
+	// 	sum_number += number[i];
+	// }
+
+	// std::cout << sum_number << std::endl;
 }
 
 
