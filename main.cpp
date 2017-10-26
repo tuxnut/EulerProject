@@ -712,22 +712,21 @@ void problem30() {
 		size_t sum = fifthPower[thousand] + fifthPower[hundreds] + fifthPower[dozens] + fifthPower[units];
 
 		if(sum == i) {
+			std::cout << sum << std::endl;
 			number.push_back(i);
-			std::cout << "truv" << std::endl;
 		}
 	}
 	
-	// for(size_t i = 0; i < number.size(); i++) {
-	// 	sum_number += number[i];
-	// }
+	for(size_t i = 0; i < number.size(); i++)
+		sum_number += number[i];
 
-	// std::cout << sum_number << std::endl;
+	std::cout << sum_number << std::endl;
 }
 
 
 int main(int argc, char **argv) {
 	// problem1();
-	// problem2();	
+	// problem2();
 	// problem3();
 	// problem4();
 	// problem5();
