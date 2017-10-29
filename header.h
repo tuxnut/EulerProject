@@ -179,5 +179,7 @@ std::vector<int> decomposeNumber(mpz_class number) {
 
 	while (number > mpz_class (std::pow(10, power))) { power++; }
 
-	std::cout << power << std::endl;
+	for(size_t i = 0; i < power; i++) {
+		
+	}
 }
