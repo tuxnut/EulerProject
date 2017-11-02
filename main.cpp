@@ -690,39 +690,7 @@ void problem29() {
 }
 /* Digit fifth powers */
 void problem30() {
-	mpz_class test (11);
-	decomposeNumber(test);
-	// std::vector<mpz_class> number;
-	// std::vector<mpz_class> fifthPower;
-	// mpz_class sum_number = 0;
-	// // size_t limit = LONG_MAX;
 
-	// for(size_t i = 0; i < 10; i++) {
-	// 	fifthPower.push_back(mpz_class(std::pow(i, 5)));
-	// }
-
-	// for(size_t i = 2; i < LONG_MAX; i++) {
-	// 	mpz_class num (i);
-	// 	int thousand = (num / 1000) ? num / 1000 : 0;
-	// 	num -= thousand * 1000;
-	// 	int hundreds = (num / 100) ? num / 100 : 0;
-	// 	num -= hundreds * 100;
-	// 	int dozens = (num / 10) ? num / 10 : 0;
-	// 	num -= dozens * 10;
-	// 	int units = num;
-
-	// 	mpz_class sum (fifthPower[thousand] + fifthPower[hundreds] + fifthPower[dozens] + fifthPower[units]);
-
-	// 	if(sum == mpz_class (i)) {
-	// 		std::cout << sum << std::endl;
-	// 		number.push_back(i);
-	// 	}
-	// }
-	
-	// for(size_t i = 0; i < number.size(); i++)
-	// 	sum_number += number[i];
-
-	// std::cout << sum_number << std::endl;
 }
 
 

@@ -172,14 +172,3 @@ void displayVetor(std::vector<size_t> vecteur) {
 	}
 	std::cout << std::endl;
 }
-
-std::vector<int> decomposeNumber(mpz_class number) {
-	std::vector<int> res;
-	int power = 0;
-
-	while (number > mpz_class (std::pow(10, power))) { power++; }
-
-	for(size_t i = 0; i < power; i++) {
-		
-	}
-}
