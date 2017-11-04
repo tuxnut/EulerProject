@@ -691,15 +691,28 @@ void problem29() {
 /* Digit fifth powers */
 void problem30() {
 	std::vector<size_t> fifthpower;
-
+	size_t sum = 0;
 
 	for(size_t i = 0; i < 10; i++) {
 		fifthpower.push_back(std::pow(i, 5));
 	}
 
-	
+	for(size_t i = 2; i < 200000; i++) {
+		std::stack<int> digitOfI = numberToDigit(i);
+		size_t sumCurrentNumber = 0;
 
-	std::cout << "résultat :" << std::endl;
+		while(!digitOfI.empty()) {
+			sumCurrentNumber += fifthpower[digitOfI.top()];
+			digitOfI.pop();
+		}
+
+		if(sumCurrentNumber == i) {
+			sum += i;
+		}
+	}
+
+
+	std::cout << "résultat :" << sum << std::endl;
 }
 
 

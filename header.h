@@ -11,6 +11,7 @@
 #include <sstream>
 #include <algorithm>
 #include <iterator>
+#include <stack>
 
 
 #define int_problem3 600851475143
@@ -171,4 +172,16 @@ void displayVetor(std::vector<size_t> vecteur) {
 		std::cout << vecteur.at(i) << "\t";
 	}
 	std::cout << std::endl;
+}
+
+std::stack<int> numberToDigit(size_t n) {
+
+	std::stack<int> digit;
+
+	while(n > 0) {
+		digit.push(n % 10);
+		n /= 10;
+	}
+
+	return digit;
 }
