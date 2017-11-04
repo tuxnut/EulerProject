@@ -738,6 +738,10 @@ void problem31() {
 	// adding one for the two_pounds coin possibility
 	std::cout << ++nbCombination << std::endl;
 }
+/* Pandigital products */
+void problem32() {
+
+}
 
 
 int main(int argc, char **argv) {
@@ -772,7 +776,8 @@ int main(int argc, char **argv) {
 	// problem28();
 	// problem29();
 	// problem30();
-	problem31();
+	// problem31();
+	problem32();
 
 	auto finish = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> elapsed = finish - start;
