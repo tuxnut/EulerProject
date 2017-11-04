@@ -690,7 +690,16 @@ void problem29() {
 }
 /* Digit fifth powers */
 void problem30() {
+	std::vector<size_t> fifthpower;
 
+
+	for(size_t i = 0; i < 10; i++) {
+		fifthpower.push_back(std::pow(i, 5));
+	}
+
+	
+
+	std::cout << "résultat :" << std::endl;
 }
 
 
