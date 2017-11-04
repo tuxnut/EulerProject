@@ -714,9 +714,35 @@ void problem30() {
 
 	std::cout << "résultat :" << sum << std::endl;
 }
+/* Coin sums */
+void problem31() {
+	int nbCombination = 0;
+
+	for(size_t one_penny = 0; one_penny <= 200; one_penny++) {
+		for(size_t two_pennies = 0; two_pennies <= 100; two_pennies++) {
+			for(size_t five_pennies = 0; five_pennies <= 50; five_pennies++) {
+				for(size_t ten_pennies = 0; ten_pennies <= 20; ten_pennies++) {
+					for(size_t twenty_pennies = 0; twenty_pennies <= 10; twenty_pennies++) {
+						for(size_t fifty_pennies = 0; fifty_pennies <= 5; fifty_pennies++) {
+							for(size_t one_pound = 0; one_pound <= 2; one_pound++) {
+								if(one_penny + two_pennies * 2 + five_pennies * 5 + ten_pennies * 10 + twenty_pennies * 20 + fifty_pennies * 50 + one_pound * 100 == 200) {
+									nbCombination++;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	// adding one for the two_pounds coin possibility
+	std::cout << ++nbCombination << std::endl;
+}
 
 
 int main(int argc, char **argv) {
+	auto start = std::chrono::high_resolution_clock::now();
+
 	// problem1();
 	// problem2();
 	// problem3();
@@ -745,6 +771,11 @@ int main(int argc, char **argv) {
 	// problem27();
 	// problem28();
 	// problem29();
-	problem30();
+	// problem30();
+	problem31();
+
+	auto finish = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double> elapsed = finish - start;
+	std::cout << "Execution time: " << elapsed.count() << " s\n";
 	return 0;
 }
